@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="data.js" ></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Таблица 1</title>
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">-->
+    <link rel="stylesheet" href="jquery-ui/jquery-ui.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../../jquery-ui-themes/1.11.4/themes/redmond/jquery-ui.min.css" type="text/css" />
+</head>
+<body>
+    <div class="centered-content">
+        <div class="container">
+            <div id="data">
+
+                <table class="table" id="table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th title="Сортировать" onclick="sortTable(1)">Имя<span class="ui-icon ui-icon-triangle-2-n-s"></span></th>
+
+                            <th title="Сортировать" onclick="sortTable(2)">Дата рождения<span class="ui-icon ui-icon-triangle-2-n-s"></span></th>
+
+                            <th title="Сортировать" onclick="sortTable(3)">Сотовый номер<span class="ui-icon ui-icon-triangle-2-n-s"></span></th>
+
+                            <th title="Сортировать" onclick="sortTable(4)">Е-мейл<span class="ui-icon ui-icon-triangle-2-n-s"></span></th>
+
+                            <th title="Сортировать" onclick="sortTable(5)">Страна проживания<span class="ui-icon ui-icon-triangle-2-n-s"></span></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="tbody">
+                        <tr id="row" title="Перетащить" class="ui-state-default">
+                            <td><span class="ui-icon ui-icon-arrowthick-2-n-s"></span></td>
+                            <td>Иван</td>
+                            <td>09/08/1995</td>
+                            <td>+7(777) 888-77-88</td>
+                            <td>qwe@mail.ru</td>
+                            <td>Казахстан</td>
+                            <td>
+                                <div class="row">
+                                <div class="col">
+                                    <button title="Редактировать" id="edit_button" value="Edit"  class="edit" onclick="edit_row(this)">
+                                    <span class="ui-icon ui-icon-pencil"><span></button>
+                                </div>
+                                <div class="col">
+                                    <button id="save_button" value="save" title="Сохранить" class="save" onclick="save_row2(this)">
+                                    <span class="ui-icon ui-icon-check"></span></button>
+                                </div>
+                                <div class="col">
+                                    <button title="Удалить" class="del" onclick = "deleteRow(this)"><span class="ui-icon ui-icon-trash"></span></button>
+                                </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr id="row" title="Перетащить" class="ui-state-default">
+                            <td><span class="ui-icon ui-icon-arrowthick-2-n-s"></span></td>
+                            <td>Якуб</td>
+                            <td>05/03/1987</td>
+                            <td>+7(747) 555-63-21</td>
+                            <td>poo@bk.ru</td>
+                            <td>Кыргыстан</td>
+                            <td>
+                            <div class="row">
+                            <div class="col">
+                                <button title="Редактировать" id="edit_button" value="Edit"  class="edit" onclick="edit_row(this)"><span class="ui-icon ui-icon-pencil"></span></button>
+                            </div>
+                            <div class="col">
+                                <button id="save_button" value="save" title="Сохранить" class="save" onclick="save_row2(this)">
+                                    <span class="ui-icon ui-icon-check"></span>
+                                    </button>
+                            </div>
+                            <div class="col">
+                                <button title="Удалить" class="del" onclick = "deleteRow(this)"><span class="ui-icon ui-icon-trash"></span></button>
+                            </div>
+                            </div>
+                            </td>
+                            </tr>
+                        <tr id="row" title="Перетащить" class="ui-state-default">
+                            <td><span class="ui-icon ui-icon-arrowthick-2-n-s"></span></td>
+
+                            <td>Алексей</td>
+                            <td>05/02/1991</td>
+                            <td>+7(701) 054-56-55</td>
+                            <td>jhg@mail.ru</td>
+                            <td>Россия</td>
+                            <td>
+                            <div class="row">
+                            <div class="col">
+                                <button title="Редактировать" id="edit_button" value="Edit"  class="edit" onclick="edit_row(this)">
+                                <span class="ui-icon ui-icon-pencil"></span></button>
+                            </div>
+                            <div class="col">
+                                <button id="save_button" value="save" title="Сохранить" class="save" onclick="save_row2(this)">
+                                    <span class="ui-icon ui-icon-check"></span>
+                                    </button>
+                            </div>
+                            <div class="col">
+                                <button title="Удалить" class="del" onclick = "deleteRow(this)"><span class="ui-icon ui-icon-trash"></span></button>
+                            </div>
+                            </div>
+                            </td>
+                        </tr>
+                        <tr id="row" title="Перетащить" class="ui-state-default">
+                            <td><span class="ui-icon ui-icon-arrowthick-2-n-s"></span></td>
+
+                            <td>Шамиль</td>
+                            <td>06/04/2022</td>
+                            <td>+7(702) 666-94-75</td>
+                            <td>asd@mail.ru</td>
+                            <td>Казахстан</td>
+                            <td>
+                            <div class="row">
+                            <div class="col">
+                                <button title="Редактировать" id="edit_button" value="Edit"  class="edit" onclick="edit_row(this)">
+                                <span class="ui-icon ui-icon-pencil"></span></button>
+                            </div>
+                            <div class="col">
+                                <button id="save_button" value="save" title="Сохранить" class="save" onclick="save_row2(this)">
+                                    <span class="ui-icon ui-icon-check"></span>
+                                    </button>
+                            </div>
+                            <div class="col">
+                                <button title="Удалить" class="del" onclick = "deleteRow(this)"><span class="ui-icon ui-icon-trash"></span></button>
+                            </div>
+                            </div>
+                            </td>
+
+                        </tr>
+                    </tbody>
+<!--Добавить запись-->                
+                    <tfoot class="tfoot">
+                        <tr class="add">
+                            <td title="Добавить" colspan="7" ><i class="ui-icon ui-icon-arrowstop-1-s"></i> Добавить запись <span class="ui-icon ui-icon-arrowstop-1-s"></span></td>
+                        </tr>
+                    </tfoot>
+                </table>
+                <br>
+<!--Кнопки-->                
+                <div class="btns">
+                    <input type="button" id="load" value="Загрузить" onclick="addJson()">
+                    <input type="button" id="sav" value="Сохранить" onclick="saveJson()">
+                    <input type="button" value="Удалить все" onclick="delAll()">
+                </div>
+                <br>
+<!--ТекстАреа-->                
+                <form class="post">
+                    <textarea id="text"></textarea>
+                </form>
+            </div>
+        </div>
+    </div>
+<!--Попап Добавления-->                
+    <div class="popup_inner">
+        <div class="popup">
+                <form class="popu">
+                        <a class="close"><span class="ui-icon ui-icon-closethick"></a>
+                        <br>
+                        <input type="text" id="name" placeholder="Имя" required><span class='form__error'>Обязательное поле</span>
+                        <input type="text" id="birth" placeholder="Дата рождения">
+                        <input type="text" id="numbe" placeholder="+7 (999) 999 99 99" minlength="8"><span class='form__error'>Заполните полностью</span>
+                        
+                            <input type="email" id="email" placeholder="Hello@mail.com"/>
+                            <span class="form__error">Это поле должно содержать E-Mail в формате example@site.com</span>
+                        
+                        <input type="text" id="country" placeholder="Страна" list="lan">
+                        <datalist id="lan">
+                            <option value="Казахстан"></option>
+                            <option value="Россия"></option>
+                            <option value="Кыргыстан"></option>
+                        </datalist>
+                        <input type="button" onclick="ValidName()" id="b1" title="Добавить в таблицу" value="Добавить">
+
+                </form>
+
+        </div>
+    </div>
+<!--Точно удалить?-->                
+    <div id="dialog-confirm" title="Точно удалить?">
+        <p><span class="ui-icon ui-icon-alert" style="float:left; margin:12px 12px 20px 0;"></span>После удаления данные невозможно будет восстановить</p>
+      </div>
+<!--Загрузились-->                
+      <div id="dialog-message" title="Загружено">
+        <p>
+          <span class="ui-icon ui-icon-circle-check" style="float:left; margin:0 7px 50px 0;"></span>
+          Загрузка прошла успешно.
+        </p>
+      </div>
+
+
+
+<!--<fieldset>
+    <legend>Загрузка</legend>
+    <a href="style.scss" target="_blank">загрузить</a>
+    <a href="style.doc" download>Имя</a>
+    <img src="sql.jpeg" width="100" alt="горы">
+</fieldset>
+-->
+    <script  src="data.js" defer></script>
+    <script  src="script.js" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+    <script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.5/jquery.inputmask.min.js"></script>
+
+</body>
+</html>
+
